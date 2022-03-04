@@ -1,0 +1,58 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  .about_me {
+    font-size: 20px;
+    text-align: justify;
+  }
+}
+
+.left_col {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.marked_text {
+  color: var(--main-color);
+}
+
+.image {
+  width: 320px;
+  height: 320px;
+}
+
+.technologies {
+  font-size: 20px;
+  & p {
+    padding-bottom: 15px;
+  }
+  .technologies_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .technology {
+    display: flex;
+    align-items: center;
+    &_icon {
+      color: var(--main-color);
+      padding-right: 5px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .technologies {
+    font-size: 16px;
+  }
+  .image {
+    display: none;
+  }
+  .content {
+    flex-direction: column;
+    .about_me {
+      font-size: 16px;
+    }
+  }
+}

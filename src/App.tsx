@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
 
-function App() {
+import NavBar from "./components/nav/nav";
+import Homepage from "./pages/homepage/Homepage";
+
+const Projects = React.lazy(() => import("./pages/projects/Projects"));
+const About = React.lazy(() => import("./pages/about/About"));
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <Homepage />
+      <section className="pages-layout">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Projects />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <About />
+        </Suspense>
+      </section>
+    </>
   );
-}
+};
 
 export default App;
