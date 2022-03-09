@@ -1,0 +1,20 @@
+.loading {
+  display: grid;
+  place-items: center;
+}
+
+.spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+  border-top-color: var(--text-color);
+  animation: 1.2s spin infinite ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

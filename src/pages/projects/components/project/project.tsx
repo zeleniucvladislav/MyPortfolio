@@ -3,8 +3,8 @@ import Aos from "aos";
 
 import "aos/dist/aos.css";
 import styles from "./project.module.scss";
-import ProjectImage from "./components/projectImage";
-import ProjectInfo from "./components/projectInfo";
+import ProjectImage from "./projectImage";
+import ProjectInfo from "./projectInfo";
 
 type Props = {
   image: any;
@@ -21,7 +21,7 @@ const Project = ({ image, title, description, url }: Props) => {
   return (
     <article className={styles.wrapper} data-aos="fade-up">
       <ProjectImage image={image} url={url} />
-      <ProjectInfo title={title} description={description} />
+      <ProjectInfo title={title} description={description} url={url} />
     </article>
   );
 };

@@ -27,6 +27,10 @@
     margin-bottom: 100px;
   }
   & button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     animation: left_anim 1s ease-in-out;
     width: clamp(160px, 300px, 20vw);
     cursor: pointer;

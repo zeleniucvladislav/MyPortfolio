@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Aos from "aos";
-import LazyLoad from "react-lazyload";
 
 import { GoTriangleRight } from "react-icons/go";
 
@@ -10,13 +9,7 @@ import styles from "./about.module.scss";
 import me from "../../assets/images/about.jpg";
 
 const About = () => {
-  const technologies = [
-    "JavaScript (ES6+)",
-    "TypeScript",
-    "React",
-    "Redux",
-    "SASS",
-  ];
+  const technologies = ["JavaScript", "TypeScript", "React", "Redux", "SASS"];
 
   useEffect(() => {
     Aos.init({ duration: 900 });
@@ -39,7 +32,7 @@ const About = () => {
             passionate to sports like football and running.
           </p>
           <section className={styles.technologies} data-aos="fade-up">
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are a few technologies I've been working with recently:</p>
             <section className={styles.technologies_list}>
               {technologies.map((tech) => {
                 return (
@@ -52,14 +45,7 @@ const About = () => {
             </section>
           </section>
         </section>
-        <LazyLoad>
-          <img
-            src={me}
-            alt="me"
-            className={styles.image}
-            data-aos="fade-left"
-          />
-        </LazyLoad>
+        <img src={me} alt="me" className={styles.image} data-aos="fade-left" />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { IoArrowDown } from "react-icons/io5";
 import Notebook from "../../assets/images/notebook.svg";
 import styles from "./homepage.module.scss";
 
@@ -15,7 +16,10 @@ const Homepage = () => {
           <span className={styles.marked_text}>web applications</span>
         </p>
         <a href="#projects">
-          <button>My Projects</button>
+          <button>
+            My Projects
+            <IoArrowDown />
+          </button>
         </a>
       </section>
       <section className={styles.right_col}>

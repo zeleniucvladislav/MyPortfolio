@@ -3,7 +3,7 @@ import logo from "../../assets/images/logo.svg";
 
 import { BiDesktop, BiUser, BiMessageAltDetail } from "react-icons/bi";
 
-const NavBar = () => {
+const Nav = () => {
   return (
     <div className={styles.fixed_layout}>
       <nav className={styles.nav}>
@@ -27,4 +27,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Nav;
