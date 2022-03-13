@@ -6,7 +6,7 @@ import { GoTriangleRight } from "react-icons/go";
 import "aos/dist/aos.css";
 import styles from "./about.module.scss";
 
-import me from "../../assets/images/about.jpg";
+import me from "assets/images/about.jpg";
 
 const About = () => {
   const technologies = ["JavaScript", "TypeScript", "React", "Redux", "SASS"];

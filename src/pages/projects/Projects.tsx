@@ -1,7 +1,7 @@
-import Project from "./components/project/project";
+import Project from "./components/project";
 import styles from "./projects.module.scss";
 
-import projects from "../../data/projects";
+import projects from "data/projects";
 
 const Projects = () => {
   return (

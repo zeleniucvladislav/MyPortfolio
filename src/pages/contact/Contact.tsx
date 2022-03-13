@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Aos from "aos";
-import { Modal } from "../../components";
-import useSubmitContact from "../../hooks/useSubmitContact";
+import { Modal, FormField } from "components";
+import useSubmitContact from "hooks/useSubmitContact";
 
 import styles from "./contact.module.scss";
 
 import { BiPaperPlane } from "react-icons/bi";
-import Map from "../../../src/assets/images/map.jpg";
-import fields from "../../data/contactFields";
-import FormField from "../../components/form/formField";
+import Map from "assets/images/map.jpg";
+import fields from "data/contactFields";
 
 const Contact = () => {
   const [form, setForm] = useState<any>({
@@ -46,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} id="contact">
       {modal.visible && <Modal text={modal.text} color={modal.color} />}
       <h1 className="page-heading">CONTACT ME</h1>
       <section className={styles.contact_layout}>

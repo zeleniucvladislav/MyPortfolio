@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import Aos from "aos";
+import ProjectImage from "./projectImage";
+import ProjectInfo from "./projectInfo";
 
 import "aos/dist/aos.css";
 import styles from "./project.module.scss";
-import ProjectImage from "./projectImage";
-import ProjectInfo from "./projectInfo";
 
 type Props = {
   image: any;

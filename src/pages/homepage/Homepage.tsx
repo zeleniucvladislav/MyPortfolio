@@ -1,5 +1,5 @@
 import { IoArrowDown } from "react-icons/io5";
-import Notebook from "../../assets/images/notebook.svg";
+import Notebook from "assets/images/notebook.svg";
 import styles from "./homepage.module.scss";
 
 const Homepage = () => {

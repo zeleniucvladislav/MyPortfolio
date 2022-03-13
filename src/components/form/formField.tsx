@@ -1,6 +1,6 @@
 import styles from "./form.module.scss";
 
-type fieldProps = {
+type Props = {
   fieldType: string;
   name: string;
   onChange: (evt: any) => void;
@@ -9,17 +9,19 @@ type fieldProps = {
   label: string;
 };
 
-const FormField = (props: fieldProps) => {
+const FormField = (props: Props) => {
+  const { fieldType, name, onChange, type, value, label } = props;
+
   const renderField = () => {
-    switch (props.fieldType) {
+    switch (fieldType) {
       case "input":
         return (
           <input
-            type="text"
+            type={type}
             className={styles.field_input}
-            onChange={props.onChange}
-            value={props.value}
-            name={props.name}
+            onChange={onChange}
+            value={value}
+            name={name}
             required
           />
         );
@@ -27,9 +29,9 @@ const FormField = (props: fieldProps) => {
         return (
           <textarea
             className={styles.field_textarea}
-            onChange={props.onChange}
-            value={props.value}
-            name={props.name}
+            onChange={onChange}
+            value={value}
+            name={name}
             required
           />
         );
@@ -37,7 +39,7 @@ const FormField = (props: fieldProps) => {
   };
   return (
     <section className={styles.field}>
-      <label className={styles.field_label}>{props.label}</label>
+      <label className={styles.field_label}>{label}</label>
       {renderField()}
     </section>
   );

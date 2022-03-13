@@ -1,12 +1,16 @@
 import React, { Suspense } from "react";
-import Loader from "./components/loader/loader";
+import { Loader, Nav } from "./components";
+import { Homepage } from "./pages";
 
-import { Nav } from "./components";
-import Homepage from "./pages/homepage/Homepage";
-
-const Projects = React.lazy(() => import("./pages/projects/Projects"));
-const About = React.lazy(() => import("./pages/about/About"));
-const Contact = React.lazy(() => import("./pages/contact/Contact"));
+const Projects = React.lazy(() =>
+  import("./pages").then((module) => ({ default: module.Projects }))
+);
+const About = React.lazy(() =>
+  import("./pages").then((module) => ({ default: module.About }))
+);
+const Contact = React.lazy(() =>
+  import("./pages").then((module) => ({ default: module.Contact }))
+);
 
 const App = () => {
   return (

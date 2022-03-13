@@ -1,10 +1,10 @@
-import FinalProject from "../assets/images/projects/finalProject.jpg";
-import FantasticFries from "../assets/images/projects/fantasticFries.jpg";
-import Dashboard from "../assets/images/projects/dashboard.jpg";
-import WeatherApp from "../assets/images/projects/weather.jpg";
-import ImageGallery from "../assets/images/projects/imageGallery.jpg";
+import FinalProject from "assets/images/projects/finalProject.jpg";
+import FantasticFries from "assets/images/projects/fantasticFries.jpg";
+import Dashboard from "assets/images/projects/dashboard.jpg";
+import WeatherApp from "assets/images/projects/weather.jpg";
+import ImageGallery from "assets/images/projects/imageGallery.jpg";
 
-import projectType from "../types/projectsType";
+import projectType from "types/projectsType";
 
 const projects: projectType[] = [
   {

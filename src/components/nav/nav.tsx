@@ -1,5 +1,5 @@
 import styles from "./nav.module.scss";
-import logo from "../../assets/images/logo.svg";
+import logo from "assets/images/logo.svg";
 
 import { BiDesktop, BiUser, BiMessageAltDetail } from "react-icons/bi";
 
