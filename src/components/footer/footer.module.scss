@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 60px;
+  border-top: 1px solid var(--secondary-color);
+  &_icon {
+    display: flex;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: 0.5s ease-in-out;
+    &:hover {
+      background-color: var(--hover-color);
+    }
+  }
+}

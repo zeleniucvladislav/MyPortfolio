@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Loader, Nav } from "./components";
+import { Footer, Loader, Nav } from "./components";
 import { Homepage } from "./pages";
 
 const Projects = React.lazy(() =>
@@ -28,6 +28,7 @@ const App = () => {
           <Contact />
         </Suspense>
       </section>
+      <Footer />
     </>
   );
 };
