@@ -1,7 +1,7 @@
 import Project from "./components/project";
 import styles from "./projects.module.scss";
 
-import projects from "data/projects";
+import projects from "static/projects";
 
 const Projects = () => {
   return (

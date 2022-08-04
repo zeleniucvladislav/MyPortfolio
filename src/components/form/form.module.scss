@@ -16,10 +16,9 @@
   flex-direction: column;
   width: 100%;
   gap: 15px;
-  &_label {
-    font-size: 16px;
-    color: var(--main-color);
-  }
+  font-size: 16px;
+  color: var(--main-color);
+
   &_input {
     @include input_fields;
     height: 35px;

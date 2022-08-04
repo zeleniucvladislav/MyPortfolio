@@ -1,4 +1,4 @@
-import links from "data/links";
+import links from "static/links";
 
 import styles from "./footer.module.scss";
 

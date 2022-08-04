@@ -38,10 +38,10 @@ const FormField = (props: Props) => {
     }
   };
   return (
-    <section className={styles.field}>
-      <label className={styles.field_label}>{label}</label>
+    <label className={styles.field}>
+      {label}
       {renderField()}
-    </section>
+    </label>
   );
 };
 

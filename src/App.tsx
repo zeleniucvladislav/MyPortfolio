@@ -1,32 +1,20 @@
-import React, { Suspense } from "react";
-import { Footer, Loader, Nav } from "./components";
-import { Homepage } from "./pages";
-
-const Projects = React.lazy(() =>
-  import("./pages").then((module) => ({ default: module.Projects }))
-);
-const About = React.lazy(() =>
-  import("./pages").then((module) => ({ default: module.About }))
-);
-const Contact = React.lazy(() =>
-  import("./pages").then((module) => ({ default: module.Contact }))
-);
+import withSuspense from "utils/hoc/withSuspense";
+import { Footer, Nav } from "./components";
+import { Homepage, Projects, About, Contact } from "./pages";
 
 const App = () => {
+  const LazyHomepage = withSuspense(Homepage);
+  const LazyProjects = withSuspense(Projects);
+  const LazyAbout = withSuspense(About);
+  const LazyContact = withSuspense(Contact);
   return (
     <>
       <Nav />
-      <Homepage />
+      {LazyHomepage}
       <section className="pages-layout">
-        <Suspense fallback={<Loader />}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<Loader />}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<Loader />}>
-          <Contact />
-        </Suspense>
+        {LazyProjects}
+        {LazyAbout}
+        {LazyContact}
       </section>
       <Footer />
     </>

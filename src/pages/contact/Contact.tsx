@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Aos from "aos";
 import { Modal, FormField } from "components";
-import useSubmitContact from "hooks/useSubmitContact";
+import useSubmitContact from "utils/hooks/useSubmitContact";
 
 import styles from "./contact.module.scss";
 
 import { BiPaperPlane } from "react-icons/bi";
 import Map from "assets/images/map.jpg";
-import fields from "data/contactFields";
+import fields from "static/contact/contactFields";
 
 const Contact = () => {
   const [form, setForm] = useState<any>({
