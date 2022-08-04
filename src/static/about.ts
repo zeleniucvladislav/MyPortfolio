@@ -4,7 +4,7 @@ export const technologies = [
   "React",
   "Redux",
   "SASS",
-  "Node/Express (Basic)",
+  "Node / Express",
 ];
 
 export const aboutMe = ` I'm web developer from Chisinau, Moldova who loves tech and would like

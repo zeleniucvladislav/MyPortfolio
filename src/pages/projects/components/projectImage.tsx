@@ -1,4 +1,4 @@
-import LazyLoad from "react-lazyload";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import styles from "./project.module.scss";
 
@@ -11,9 +11,7 @@ const ProjectImage = ({ image, url }: Props) => {
   return (
     <section className={styles.image_container}>
       <a href={url} target="_blank" rel="noreferrer">
-        <LazyLoad>
-          <img src={image} alt="project" className={styles.image} />
-        </LazyLoad>
+        <LazyLoadImage alt="project" src={image} className={styles.image} />
       </a>
     </section>
   );

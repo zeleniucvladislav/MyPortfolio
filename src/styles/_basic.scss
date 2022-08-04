@@ -50,6 +50,9 @@ a {
   max-width: 1000px;
   gap: 15vh;
   padding: 0 50px 110px 50px;
+  @media (max-width: 375px) {
+    padding: 0 25px 110px 25px;
+  }
 }
 
 .page-heading {
