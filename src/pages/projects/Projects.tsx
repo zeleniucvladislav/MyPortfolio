@@ -6,7 +6,7 @@ import projects from "static/projects";
 const Projects = () => {
   return (
     <div className={styles.wrapper} id="projects">
-      <h2 className="page-heading">MY PROJECTS</h2>
+      <h2 className="page-heading">PROJECTS</h2>
       <section className={styles.projects_list}>
         {projects.map((project) => {
           return (

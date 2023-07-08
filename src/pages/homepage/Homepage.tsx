@@ -9,7 +9,7 @@ const Homepage = () => {
         <h1>
           Vladislav <span className={styles.marked_text}>Zeleniuc</span>
         </h1>
-        <h2>Frontend developer & student</h2>
+        <h2>Frontend developer at Brizy</h2>
         <p>
           I'm passionate creating splendid
           <br />

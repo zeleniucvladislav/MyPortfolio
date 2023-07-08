@@ -4,27 +4,26 @@ import Dashboard from "assets/images/projects/dashboard.jpg";
 import WeatherApp from "assets/images/projects/weather.jpg";
 import ImageGallery from "assets/images/projects/imageGallery.jpg";
 import Countdown from "assets/images/projects/countdown.jpg";
-import NoteManager from "assets/images/projects/notemanager.jpg";
+import Brizy from "assets/images/projects/brizy.png";
 
 import projectType from "types/projectsType";
 
 const projects: projectType[] = [
   {
     id: 0,
+    image: Brizy,
+    title: "Brizy",
+    description: `Brizy - is the most user-friendly visual page builder in town! No designer or developer skills required. The only tools you'll need to master are clicks and drags.`,
+    url: "https://www.brizy.io/",
+  },
+  {
+    id: 1,
     image: Dashboard,
     title: "Discord Dashboard",
     description: `Arknights/Azur Lane Dashboard - represents my work project which is a web statistics and managment dashboard used by discord server staff from azur lane and arknights. 
     It provides such functionalities as aply/review form of a candidate, viewing and changing discord server settings, 
     very customizable way to create a server message via form and statistics about users activity, moderator overall activity, each moderator activity on certain server.`,
     url: "https://youtu.be/Ir93_dVymgg",
-  },
-  {
-    id: 1,
-    image: NoteManager,
-    title: "Notes Manager",
-    description: `Notes Manager - is a web application with authentification process whose purpose is to manage notes by creating, editing and deleting them. 
-    Those notes could be set as personal or shared to public which exposes them in notes global list.`,
-    url: "https://notemanager.info/",
   },
   {
     id: 2,
