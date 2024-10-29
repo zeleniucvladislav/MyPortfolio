@@ -1,10 +1,10 @@
 import { Loader } from "components";
-import React, { Suspense } from "react";
+import { Suspense, FC } from "react";
 
-const withSuspense = (WrappedComponent: React.FC) => {
-  return (
+const withSuspense = <T extends object>(WrappedComponent: FC<T>) => {
+  return (props: T) => (
     <Suspense fallback={<Loader />}>
-      <WrappedComponent />
+      <WrappedComponent {...props} />
     </Suspense>
   );
 };

@@ -1,24 +1,26 @@
 import Project from "./components/project";
 import styles from "./projects.module.scss";
+import { FC, ReactElement } from "react";
+import { Props } from "./types";
 
-import projects from "static/projects";
-
-const Projects = () => {
+const Projects: FC<Props> = ({ projects }): ReactElement => {
   return (
     <div className={styles.wrapper} id="projects">
       <h2 className="page-heading">PROJECTS</h2>
       <section className={styles.projects_list}>
-        {projects.map((project) => {
-          return (
-            <Project
-              key={project.id}
-              image={project.image}
-              title={project.title}
-              description={project.description}
-              url={project.url}
-            />
-          );
-        })}
+        {projects.map(
+          ({ fields: { description, image, link, name }, sys: { id } }) => {
+            return (
+              <Project
+                key={id}
+                image={image}
+                name={name}
+                description={description}
+                link={link}
+              />
+            );
+          }
+        )}
       </section>
     </div>
   );

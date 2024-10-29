@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { FC, ReactElement, useEffect } from "react";
+import type { Project as Props } from "types/portfolioData";
 import Aos from "aos";
 import ProjectImage from "./projectImage";
 import ProjectInfo from "./projectInfo";
@@ -6,22 +7,20 @@ import ProjectInfo from "./projectInfo";
 import "aos/dist/aos.css";
 import styles from "./project.module.scss";
 
-type Props = {
-  image: any;
-  title: string;
-  description: string;
-  url: string;
-};
-
-const Project = ({ image, title, description, url }: Props) => {
+const Project: FC<Props["fields"]> = ({
+  image,
+  name,
+  description,
+  link,
+}): ReactElement => {
   useEffect(() => {
     Aos.init({ duration: 900 });
   }, []);
 
   return (
     <article className={styles.wrapper} data-aos="fade-up">
-      <ProjectImage image={image} url={url} />
-      <ProjectInfo title={title} description={description} url={url} />
+      <ProjectImage image={image} link={link} />
+      <ProjectInfo name={name} description={description} link={link} />
     </article>
   );
 };
