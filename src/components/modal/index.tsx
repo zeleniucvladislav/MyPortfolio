@@ -1,13 +1,10 @@
+import { FC, ReactElement } from "react";
 import { BiMessageAltDetail } from "react-icons/bi";
+import { Props } from "./types";
 
 import styles from "./modal.module.scss";
 
-type Props = {
-  text: string;
-  color: string;
-};
-
-const Modal = ({ text, color }: Props) => {
+const Modal: FC<Props> = ({ text, color }): ReactElement => {
   return (
     <div className={styles.modal_wrapper}>
       <div className={styles.modal}>

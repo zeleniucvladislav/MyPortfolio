@@ -1,18 +1,17 @@
+import { FC, ReactElement, useMemo } from "react";
+import type { Props } from "./types";
+
 import styles from "./form.module.scss";
 
-type Props = {
-  fieldType: string;
-  name: string;
-  onChange: (evt: any) => void;
-  type: string;
-  value: string;
-  label: string;
-};
-
-const FormField = (props: Props) => {
-  const { fieldType, name, onChange, type, value, label } = props;
-
-  const renderField = () => {
+const FormField: FC<Props> = ({
+  fieldType,
+  name,
+  onChange,
+  type,
+  value,
+  label,
+}): ReactElement => {
+  const field = useMemo(() => {
     switch (fieldType) {
       case "input":
         return (
@@ -36,11 +35,11 @@ const FormField = (props: Props) => {
           />
         );
     }
-  };
+  }, [fieldType, name, type, value, onChange]);
   return (
     <label className={styles.field}>
       {label}
-      {renderField()}
+      {field}
     </label>
   );
 };

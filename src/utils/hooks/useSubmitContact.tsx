@@ -1,3 +1,4 @@
+import { Dispatch } from "react";
 import emailjs from "@emailjs/browser";
 import {
   service_id,
@@ -6,13 +7,12 @@ import {
   successModal,
   errorModal,
 } from "static/contact/contactSubmit";
+import { Modal } from "pages/contact/types";
 
-import { Modal } from "types/notificationModal";
-
-type Props = {
+interface Props {
   form: { name: string; email: string; message: string };
-  setModal: React.Dispatch<React.SetStateAction<Modal>>;
-};
+  setModal: Dispatch<React.SetStateAction<Modal>>;
+}
 
 const useSubmitContacts = () => {
   const handleSubmit = ({ form, setModal }: Props) => {
@@ -24,7 +24,7 @@ const useSubmitContacts = () => {
             setModal(successModal);
           } else setModal(errorModal);
         },
-        (err) => {
+        (_) => {
           setModal(errorModal);
         }
       )

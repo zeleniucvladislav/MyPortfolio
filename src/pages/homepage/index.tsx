@@ -1,8 +1,10 @@
+import { memo, ReactElement } from "react";
 import { IoArrowDown } from "react-icons/io5";
+
 import Notebook from "assets/images/notebook.svg";
 import styles from "./homepage.module.scss";
 
-const Homepage = () => {
+const Homepage = (): ReactElement => {
   return (
     <div className={styles.wrapper} id="homepage">
       <section className={styles.left_col}>
@@ -29,4 +31,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default memo(Homepage);

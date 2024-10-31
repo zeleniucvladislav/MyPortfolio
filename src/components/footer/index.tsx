@@ -1,8 +1,9 @@
-import links from "static/links";
+import { memo, ReactElement } from "react";
 
+import links from "static/links";
 import styles from "./footer.module.scss";
 
-const Footer = () => {
+const Footer = (): ReactElement => {
   return (
     <footer className={styles.footer}>
       {links.map((link) => {
@@ -22,4 +23,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

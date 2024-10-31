@@ -1,17 +1,18 @@
-import { FC, ReactElement, useEffect, useMemo } from "react";
+import { FC, ReactElement, useEffect } from "react";
 import Aos from "aos";
 import { GoTriangleRight } from "react-icons/go";
+import { useContentfulImage } from "utils/hooks/useContentfulImage";
+import { Props } from "./types";
+
 import "aos/dist/aos.css";
 import styles from "./about.module.scss";
-import { Props } from "./types";
-import { getImageUrl } from "utils/imageUrl";
 
 const About: FC<Props> = ({
   description,
   profileImage,
   technologies,
 }): ReactElement => {
-  const imageUrl = useMemo(() => getImageUrl(profileImage), [profileImage]);
+  const imageUrl = useContentfulImage(profileImage);
 
   useEffect(() => {
     Aos.init({ duration: 900 });

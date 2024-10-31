@@ -1,3 +1,6 @@
 import { PortfolioData } from "types/portfolioData";
 
-export type Props = Omit<PortfolioData, "projects">;
+export type Props = Pick<
+  PortfolioData,
+  "description" | "profileImage" | "technologies"
+>;

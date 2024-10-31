@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  memo,
+  ChangeEvent,
+  ReactElement,
+} from "react";
 import Aos from "aos";
 import { Modal, FormField } from "components";
 import useSubmitContact from "utils/hooks/useSubmitContact";
+import { BiPaperPlane } from "react-icons/bi";
+import { Form as FormType, Modal as ModalType } from "./types";
 
+import fields from "static/contact/contactFields";
+import Map from "assets/images/map.jpg";
 import styles from "./contact.module.scss";
 
-import { BiPaperPlane } from "react-icons/bi";
-import Map from "assets/images/map.jpg";
-import fields from "static/contact/contactFields";
-
-const Contact = () => {
-  const [form, setForm] = useState<any>({
+const Contact = (): ReactElement => {
+  const [form, setForm] = useState<FormType>({
     name: "",
     email: "",
     message: "",
   });
-  const [modal, setModal] = useState({
+  const [modal, setModal] = useState<ModalType>({
     visible: false,
     text: "",
     color: "",
@@ -28,7 +34,7 @@ const Contact = () => {
   }, []);
 
   const onChange = (
-    evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     evt.persist();
     setForm({ ...form, [evt.target.name]: evt.target.value });
@@ -73,4 +79,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default memo(Contact);

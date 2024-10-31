@@ -1,16 +1,8 @@
-import withSuspense from "utils/hoc/withSuspense";
 import { Footer, Loader, Nav } from "./components";
 import { Homepage, Projects, About, Contact } from "./pages";
 import { useContentful } from "utils/hooks/useContentful";
 import { parseContentfulPortfolio } from "utils/parser/parseContentfulPortfolio";
 import { ReactElement, useMemo } from "react";
-import { Props as ProjectProps } from "pages/projects/types";
-import { Props as AboutProps } from "pages/about/types";
-
-const LazyHomepage = withSuspense(Homepage);
-const LazyProjects = withSuspense<ProjectProps>(Projects);
-const LazyAbout = withSuspense<AboutProps>(About);
-const LazyContact = withSuspense(Contact);
 
 const App = (): ReactElement => {
   const { entries } = useContentful("portfolio");
@@ -23,20 +15,21 @@ const App = (): ReactElement => {
     return <Loader />;
   }
 
-  const { description, profileImage, projects, technologies } = portfolioData;
+  const { description, profileImage, projects, technologies, logo } =
+    portfolioData;
 
   return (
     <>
-      <Nav />
-      <LazyHomepage />
+      <Nav logo={logo} />
+      <Homepage />
       <section className="pages-layout">
-        <LazyProjects projects={projects} />
-        <LazyAbout
+        <Projects projects={projects} />
+        <About
           description={description}
           profileImage={profileImage}
           technologies={technologies}
         />
-        <LazyContact />
+        <Contact />
       </section>
       <Footer />
     </>

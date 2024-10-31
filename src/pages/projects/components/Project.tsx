@@ -1,8 +1,8 @@
 import { FC, ReactElement, useEffect } from "react";
 import type { Project as Props } from "types/portfolioData";
 import Aos from "aos";
-import ProjectImage from "./projectImage";
-import ProjectInfo from "./projectInfo";
+import ProjectImage from "./ProjectImage";
+import ProjectInfo from "./ProjectInfo";
 
 import "aos/dist/aos.css";
 import styles from "./project.module.scss";

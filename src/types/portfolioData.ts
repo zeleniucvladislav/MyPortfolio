@@ -23,4 +23,5 @@ export interface PortfolioData {
   profileImage: Image;
   technologies: string[];
   projects: Project[];
+  logo: Image;
 }

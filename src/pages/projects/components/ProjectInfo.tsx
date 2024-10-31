@@ -1,6 +1,6 @@
+import { FC, ReactElement } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import type { Project } from "types/portfolioData";
-import { FC, ReactElement } from "react";
 
 import styles from "./project.module.scss";
 

@@ -1,13 +1,17 @@
-import styles from "./nav.module.scss";
-import logo from "assets/images/logo.svg";
+import { FC, ReactElement } from "react";
+import { useContentfulImage } from "utils/hooks/useContentfulImage";
+import { Props } from "./types";
 
 import { navLinks } from "static/navLinks";
+import styles from "./nav.module.scss";
 
-const Nav = () => {
+const Nav: FC<Props> = ({ logo }): ReactElement => {
+  const imageUrl = useContentfulImage(logo);
+
   return (
     <div className={styles.fixed_layout}>
       <nav className={styles.nav}>
-        <img src={logo} alt="logo" className={styles.logo} />
+        <img src={imageUrl} alt="logo" className={styles.logo} />
         <section className={styles.link_wrapper}>
           {navLinks.map((link) => {
             return (
