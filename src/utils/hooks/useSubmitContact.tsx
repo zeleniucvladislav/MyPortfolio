@@ -24,7 +24,7 @@ const useSubmitContacts = () => {
             setModal(successModal);
           } else setModal(errorModal);
         },
-        (_) => {
+        () => {
           setModal(errorModal);
         }
       )

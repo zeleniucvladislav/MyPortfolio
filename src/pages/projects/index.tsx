@@ -1,7 +1,7 @@
 import Project from "./components/Project";
 import styles from "./projects.module.scss";
 import { FC, ReactElement } from "react";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 const Projects: FC<Props> = ({ projects }): ReactElement => {
   return (

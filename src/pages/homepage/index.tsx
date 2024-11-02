@@ -13,7 +13,7 @@ const Homepage = (): ReactElement => {
         </h1>
         <h2>Frontend developer at Brizy</h2>
         <p>
-          I'm passionate creating splendid
+          I&apos;m passionate creating splendid
           <br />
           <span className={styles.marked_text}>web applications</span>
         </p>

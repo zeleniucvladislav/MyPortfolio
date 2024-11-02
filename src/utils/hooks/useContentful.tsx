@@ -5,25 +5,30 @@ export const useContentful = (contentType: string) => {
   const instance = useMemo(
     () =>
       createClient({
-        space: process.env.REACT_APP_SPACE ?? "",
-        accessToken: process.env.REACT_APP_TOKEN ?? "",
+        space: import.meta.env.VITE_SPACE ?? "",
+        accessToken: import.meta.env.VITE_TOKEN ?? "",
       }),
     []
   );
+
   const [entries, setEntries] =
     useState<EntryCollection<EntrySkeletonType> | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const getEntries = useCallback(async () => {
-    const entries = await instance.getEntries({
-      content_type: contentType,
-    });
-
-    setEntries(entries as EntryCollection<EntrySkeletonType>);
+    try {
+      const entries = await instance.getEntries({
+        content_type: contentType,
+      });
+      setEntries(entries as EntryCollection<EntrySkeletonType>);
+    } catch {
+      setError("Something went wrong ! Please come later.");
+    }
   }, [contentType, instance]);
 
   useEffect(() => {
     getEntries();
   }, [getEntries]);
 
-  return { entries };
+  return { entries, error };
 };

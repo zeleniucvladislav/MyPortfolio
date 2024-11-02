@@ -1,6 +1,6 @@
 import { FC, ReactElement } from "react";
 import { BiMessageAltDetail } from "react-icons/bi";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 import styles from "./modal.module.scss";
 

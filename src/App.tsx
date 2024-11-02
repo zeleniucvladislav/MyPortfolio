@@ -1,15 +1,19 @@
-import { Footer, Loader, Nav } from "./components";
-import { Homepage, Projects, About, Contact } from "./pages";
+import { Footer, Loader, Nav, Notification } from "components";
+import { Homepage, Projects, About, Contact } from "pages";
 import { useContentful } from "utils/hooks/useContentful";
 import { parseContentfulPortfolio } from "utils/parser/parseContentfulPortfolio";
 import { ReactElement, useMemo } from "react";
 
 const App = (): ReactElement => {
-  const { entries } = useContentful("portfolio");
+  const { entries, error } = useContentful("portfolio");
   const portfolioData = useMemo(
     () => parseContentfulPortfolio(entries),
     [entries]
   );
+
+  if (error) {
+    return <Notification message={error} />;
+  }
 
   if (!entries) {
     return <Loader />;

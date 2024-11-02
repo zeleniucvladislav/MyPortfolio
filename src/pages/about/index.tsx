@@ -2,7 +2,7 @@ import { FC, ReactElement, useEffect } from "react";
 import Aos from "aos";
 import { GoTriangleRight } from "react-icons/go";
 import { useContentfulImage } from "utils/hooks/useContentfulImage";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 import "aos/dist/aos.css";
 import styles from "./about.module.scss";
@@ -27,7 +27,9 @@ const About: FC<Props> = ({
             {description}
           </p>
           <section className={styles.technologies} data-aos="fade-up">
-            <p>Here are a few technologies I've been working with recently:</p>
+            <p>
+              Here are a few technologies I&apos;ve been working with recently:
+            </p>
             <section className={styles.technologies_list}>
               {technologies.map((tech) => {
                 return (

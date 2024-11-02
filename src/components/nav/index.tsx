@@ -1,6 +1,6 @@
 import { FC, ReactElement } from "react";
 import { useContentfulImage } from "utils/hooks/useContentfulImage";
-import { Props } from "./types";
+import type { Props } from "./types";
 
 import { navLinks } from "static/navLinks";
 import styles from "./nav.module.scss";
