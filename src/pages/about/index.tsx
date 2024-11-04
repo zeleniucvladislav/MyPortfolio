@@ -1,5 +1,4 @@
-import { FC, ReactElement, useEffect } from "react";
-import Aos from "aos";
+import { FC, ReactElement } from "react";
 import { GoTriangleRight } from "react-icons/go";
 import { useContentfulImage } from "utils/hooks/useContentfulImage";
 import type { Props } from "./types";
@@ -13,10 +12,6 @@ const About: FC<Props> = ({
   technologies,
 }): ReactElement => {
   const imageUrl = useContentfulImage(profileImage);
-
-  useEffect(() => {
-    Aos.init({ duration: 900 });
-  }, []);
 
   return (
     <div className={styles.wrapper} id="about">
@@ -42,12 +37,9 @@ const About: FC<Props> = ({
             </section>
           </section>
         </section>
-        <img
-          src={imageUrl}
-          alt="me"
-          className={styles.image}
-          data-aos="fade-left"
-        />
+        <div className={styles.image} data-aos="fade-left">
+          <img src={imageUrl} alt="me" />
+        </div>
       </div>
     </div>
   );

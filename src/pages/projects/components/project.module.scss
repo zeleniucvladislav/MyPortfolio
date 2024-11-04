@@ -81,7 +81,7 @@
   }
 
   .description {
-    background: #26202e;
+    background: var(--secondary-color);
     padding: 20px;
     border-radius: 3px;
   }
@@ -89,7 +89,7 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    background-color: #26202e;
+    background-color: var(--secondary-color);
   }
   .info {
     grid-column: 1 / -1 !important;

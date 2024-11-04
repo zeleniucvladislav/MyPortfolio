@@ -1,11 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  memo,
-  ChangeEvent,
-  ReactElement,
-} from "react";
-import Aos from "aos";
+import React, { useState, memo, ChangeEvent, ReactElement } from "react";
 import { Modal, FormField } from "components";
 import useSubmitContact from "utils/hooks/useSubmitContact";
 import { BiPaperPlane } from "react-icons/bi";
@@ -28,10 +21,6 @@ const Contact = (): ReactElement => {
   });
 
   const handleSubmit = useSubmitContact();
-
-  useEffect(() => {
-    Aos.init({ duration: 900 });
-  }, []);
 
   const onChange = (
     evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

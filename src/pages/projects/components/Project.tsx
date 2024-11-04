@@ -1,6 +1,5 @@
-import { FC, ReactElement, useEffect } from "react";
+import { FC, ReactElement } from "react";
 import type { Project as Props } from "types/portfolioData";
-import Aos from "aos";
 import ProjectImage from "./ProjectImage";
 import ProjectInfo from "./ProjectInfo";
 
@@ -13,10 +12,6 @@ const Project: FC<Props["fields"]> = ({
   description,
   link,
 }): ReactElement => {
-  useEffect(() => {
-    Aos.init({ duration: 900 });
-  }, []);
-
   return (
     <article className={styles.wrapper} data-aos="fade-up">
       <ProjectImage image={image} link={link} />
